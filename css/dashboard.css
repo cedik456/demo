@@ -1,0 +1,359 @@
+/* * RESET * */
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Rubik:wght@900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap");
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  cursor: default;
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  background: #fff;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+/* img,
+picture {
+  max-width: 100%;
+  display: block;
+} */
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* GENERAL */
+
+.hero {
+  width: 100%;
+  min-height: 100vh;
+  background: #fff;
+  color: black;
+}
+
+nav {
+  background: #fff;
+  width: 100%;
+  padding: 15px 10%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.logo-wrapper {
+  display: flex;
+}
+
+.logo {
+  width: 60px;
+}
+
+.user-pic {
+  width: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 30px;
+}
+
+/* .blank-profile {
+  border-radius: 0;
+  width: 40px;
+} */
+
+nav ul {
+  width: 100%;
+  text-align: right;
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 400;
+  font-size: 15px;
+}
+
+.container {
+  width: auto;
+  padding: 50px 10%;
+}
+
+.btn {
+  border: none; /* No border */
+  color: white; /* White text color */
+  padding: 10px 20px; /* Padding for button */
+  text-align: center; /* Center the text */
+  text-decoration: none; /* Remove underline */
+  display: inline-block; /* Inline block for button behavior */
+  font-size: 16px; /* Font size */
+  font-weight: 500; /* Semi-bold font weight */
+  border-radius: 5px; /* Rounded corners */
+  transition: background-color 0.3s ease; /* Smooth transition on hover */
+  cursor: pointer; /* Cursor pointer on hover */
+}
+
+.btn-primary {
+  background: #2963bf;
+}
+
+.btn-primary:hover {
+  background: hsl(217, 65%, 40%);
+}
+
+.btn-secondary {
+  background: green;
+}
+
+/* Custom Table Styles */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  text-align: left;
+}
+
+.custom-table thead {
+  background-color: #f0f0f0;
+}
+
+.custom-table th,
+.custom-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.custom-table th {
+  background-color: #f7f7f7;
+  font-weight: 600;
+}
+
+.custom-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.custom-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.custom-table button,
+.custom-table .delete-link {
+  background-color: transparent;
+  border: none;
+  color: #0066cc;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  font-size: 14px;
+}
+
+.custom-table button:hover,
+.custom-table .delete-link:hover {
+  color: #003366;
+}
+
+.sub-menu-wrap {
+  position: absolute;
+  top: 100%;
+  right: 10%;
+  width: 330px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+
+.sub-menu-wrap.open-menu {
+  max-height: 320px;
+}
+
+.sub-menu {
+  background: white;
+  padding: 20px;
+  margin: 10px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.user-info h3 {
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.user-info img {
+  width: 40px;
+  border-radius: 15px;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.sub-menu hr {
+  border: 0;
+  height: 1px;
+  width: 100%;
+  background: #ccc;
+  margin: 15px 0 10px;
+}
+
+.sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #525252;
+  margin: 12px 0;
+}
+
+.sub-menu-link p {
+  width: 100%;
+  font-size: 13px;
+}
+
+.sub-menu-link img {
+  width: 35px;
+  background: #e5e5e5;
+  border-radius: 50%;
+  padding: 8px;
+  margin-right: 15px;
+}
+
+.sub-menu-link span {
+  font-size: 13px;
+  transition: transform 0.5s;
+}
+
+.sub-menu-link:hover span {
+  transform: translateX(5px);
+}
+
+.sub-menu-link:hover {
+  font-weight: 600;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed;
+  z-index: 1;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%); /* Centers the modal */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.5); /* Black with opacity */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  margin: auto; /* Centers content inside */
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  box-sizing: border-box;
+}
+
+.modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.modal-content form button {
+  width: 96%;
+}
+
+.modal-content form input {
+  width: calc(
+    100% - 20px
+  ); /* Ensures inputs take the full width minus padding */
+  outline: none;
+  border: 1px solid #ddd;
+  padding: 12px 10px; /* Adjusted padding for a cleaner look */
+  border-radius: 5px;
+  background: #e4e4e4;
+  /* margin-bottom: 5px; */
+}
+
+.add-student-form {
+  display: flex;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
