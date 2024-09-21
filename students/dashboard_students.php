@@ -3,12 +3,7 @@
 session_start();
 // Database connection
 
-$conn = new mysqli("localhost", "root", "", "school_db");
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require '../connection/db.php';
 
 if (isset($_SESSION['reg_id'])) {
     // Prepare and execute statement to fetch user data
@@ -35,6 +30,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <title>View Students</title>
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/reset.css">
 </head>
 <body>
         <div class="hero">
@@ -51,7 +47,7 @@ $result = $conn->query($sql);
             <div class="sub-menu-wrap" id="subMenu">
                 <div class="sub-menu">
                     <div class="user-info">
-                        <img src="../assets/blank-profile-picture-973460_960_720.webp" alt="" class="blank-profile">
+                        <img src="../assets/profile.png" alt="" class="blank-profile">
                         <h3 id="full-name"
                             data-first-name="<?php echo htmlspecialchars($users['first_name'], ENT_QUOTES, 'UTF-8'); ?>"
                             data-middle-name="<?php echo htmlspecialchars($users['mid_name'], ENT_QUOTES, 'UTF-8'); ?>"
@@ -59,7 +55,7 @@ $result = $conn->query($sql);
                         </h3>
                     </div>
                     <hr>
-                    <a href="#" class="sub-menu-link">
+                    <a href="../users/update.php" class="sub-menu-link">
                         <img src="../assets/profile.png" alt="">
                         <p>Edit profile</p>
                         <span>></span>
@@ -85,7 +81,7 @@ $result = $conn->query($sql);
 
         <div class="container">
 
-         <button type="button" class="btn btn-primary" onclick="openModal()">Add Student</button>
+             <button type="button" class="btn btn-primary"   onclick="openModal()">Add Student</button>
 
               <table class="custom-table">
                 <thead>
@@ -133,10 +129,10 @@ $result = $conn->query($sql);
 
                     
                 </tbody>
-            </table>
+             </table>
 
-            <!-- Add Student Modal -->
-            <div id="addStudentModal" class="modal">
+             <!-- Add Student Modal -->
+             <div id="addStudentModal" class="modal">
                 <div class="modal-content">
                     <span class="close" onclick="closeModal()">&times;</span>
                     <h3>Add Student</h3>
@@ -168,10 +164,10 @@ $result = $conn->query($sql);
                         <button type="submit" class="btn btn-primary">Add Student</button>
                     </form>
                 </div>
-            </div>
+             </div>
 
-            <!-- Edit Student Modal -->
-            <div id="editStudentModal" class="modal">
+             <!-- Edit Student Modal -->
+             <div id="editStudentModal" class="modal">
                 <div class="modal-content">
                     <span class="close" onclick="closeEditModal()">&times;</span>
                     <h3>Edit Student</h3>
@@ -204,8 +200,8 @@ $result = $conn->query($sql);
                         <button type="submit" class="btn btn-secondary">Update Student</button>
                     </form>
                 </div>
+             </div>
             </div>
-
     </div>
     <script src="../js/openModals.js"></script>
     <script src="../js/toggleMenu.js"></script>

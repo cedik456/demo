@@ -8,11 +8,7 @@ if (!isset($_SESSION['reg_id']) || !isset($_SESSION['username'])) {
 }
 
 // Connect to the database
-$conn = new mysqli("localhost", "root", "", "school_db");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require '../connection/db.php';
 
 // Fetch any necessary data for the dashboard (e.g., user details, grades, etc.)
 // Example: Fetching the user's details
@@ -38,6 +34,7 @@ $conn->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Dashboard</title>
     <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/reset.css">
 </head>
 <body>
 
@@ -56,10 +53,14 @@ $conn->close();
                 <div class="sub-menu">
                     <div class="user-info">
                         <img src="../assets/profile.png" alt="">
-                        <h3>Cedric Nano</h3>
+                        <h3 id="full-name"
+                            data-first-name="<?php echo htmlspecialchars($users['first_name'], ENT_QUOTES, 'UTF-8'); ?>"
+                            data-middle-name="<?php echo htmlspecialchars($users['mid_name'], ENT_QUOTES, 'UTF-8'); ?>"
+                            data-last-name="<?php echo htmlspecialchars($users['last_name'], ENT_QUOTES, 'UTF-8'); ?>">
+                        </h3>
                     </div>
                     <hr>
-                    <a href="#" class="sub-menu-link">
+                    <a href="update.php" class="sub-menu-link">
                         <img src="../assets/profile.png" alt="">
                         <p>Edit profile</p>
                         <span>></span>
@@ -82,9 +83,6 @@ $conn->close();
                 </div>
             </div>
         </nav>
-        <div class="container">
-            
-        </div>
     </div>
 
 

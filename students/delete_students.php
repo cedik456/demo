@@ -2,12 +2,8 @@
 // delete_students.php
 
 // Database connection
-$conn = new mysqli("localhost", "root", "", "school_db");
 
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require '../connection/db.php';
 
 // Get the student ID from the query string
 if (isset($_GET['id']) && is_numeric($_GET['id'])) {

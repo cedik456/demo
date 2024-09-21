@@ -1,9 +1,5 @@
 <?php
-$conn = new mysqli("localhost", "root", "", "school_db");
-
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require '../connection/db.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $first_name = $conn->real_escape_string($_POST['first_name']);

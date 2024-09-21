@@ -4,12 +4,7 @@
 session_start(); // Start the session
 
 // Database connection
-$conn = new mysqli("localhost", "root", "", "school_db");
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require '../connection/db.php';
 
 // Check if form is submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
