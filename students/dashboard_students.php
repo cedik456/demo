@@ -36,7 +36,7 @@ $result = $conn->query($sql);
         <div class="hero">
          <nav>
             <div class="logo-wrapper">
-                <a href="#"><img src="../assets/dwcl-logo.png" alt="" class="logo"></a>
+                <a href="../students/dashboard_students.php"><img src="../assets/dwcl-logo.png" alt="" class="logo"></a>
             </div>
             <ul>
                 <li><a href="../users/dashboard.php">Dashboard</a></li>
@@ -207,5 +207,7 @@ $result = $conn->query($sql);
     <script src="../js/toggleMenu.js"></script>
     <script src="../js/modals.js"></script>
     <script src="../js/formatFullName.js"></script>
+    <script src="../js/page_transition.js"></script>
+
 </body>
 </html>

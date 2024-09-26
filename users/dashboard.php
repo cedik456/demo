@@ -41,7 +41,7 @@ $conn->close();
     <div class="hero">
         <nav>
         <div class="logo-wrapper">
-                <a href="#"><img src="../assets/dwcl-logo.png" alt="" class="logo"></a>
+                <a href="../students/dashboard_students.php"><img src="../assets/dwcl-logo.png" alt="" class="logo"></a>
             </div>
             <ul>
                 <li><a href="dashboard.php">Dashboard</a></li>
@@ -65,7 +65,7 @@ $conn->close();
                         <p>Edit profile</p>
                         <span>></span>
                     </a>
-                    <a href="#" class="sub-menu-link">
+                    <a href="settings_privacy.php" class="sub-menu-link">
                         <img src="../assets/setting.png" alt="">
                         <p>Settings & Privacy</p>
                         <span>></span>
@@ -88,5 +88,7 @@ $conn->close();
 
     <script src="../js/formatFullName.js"></script>
     <script src="../js/toggleMenu.js"></script>
+    <script src="../js/page_transition.js"></script>
+
 </body>
 </html>

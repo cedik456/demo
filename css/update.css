@@ -6,12 +6,20 @@
 }
 
 .wrapper {
-  padding: 20px 20px;
   display: flex;
-  flex-direction: column;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); */
   border-radius: 10px;
-  margin-top: 2rem;
+  flex-direction: column;
+}
+
+.wrapper-user {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.wrapper-password {
+  /* margin-top: 1rem; */
+  margin-bottom: 2rem;
 }
 
 .delete-wrapper {
@@ -21,17 +29,16 @@
 h1 {
   font-size: 1.1rem;
   font-weight: 500;
+  margin-bottom: 1rem;
 }
 
 p {
   font-size: 0.8rem;
   font-weight: 300;
+  margin-bottom: 0.5rem;
 }
 
 .input-wrapper {
-  display: grid;
-  flex-direction: column;
-  width: 100%;
   margin-top: 1rem;
 }
 
@@ -90,7 +97,7 @@ nav a {
   padding: 50px 10%;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 form {

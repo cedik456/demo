@@ -40,6 +40,12 @@ body {
   font-family: "Poppins", sans-serif;
   cursor: default;
   background: #fff;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.2s ease;
+}
+
+body.visible {
+  opacity: 1; /* Fully visible */
 }
 
 /* A elements that don't have a class get default styles */
